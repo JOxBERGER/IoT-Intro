@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>MQTT Websockets</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css" media="all">
+
+	<script src="scripts/libs/jquery.min.js" type="text/javascript"></script>
+	<script src="scripts/libs/mqttws31.js" type="text/javascript"></script>
+	<script src="scripts/custom.js" type="text/javascript"></script>
+	<script src="scripts/config.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+	<div class="brocker_box">
+		<div class="bold">MQTT Brocker</div>
+		<p>
+			<div id="client_id">Client ID: </div>
+			<div id="status">status </div>
+		</p>
+	</div>
+
+
+	<div class="publish_box">
+		<div class="bold">Publish</div>
+		<p>
+			<label for="publish_topic">Topic</label><br>
+			<input id="publish_topic" class="textbox" type="text">
+		</p>
+
+		<p>
+			<label for="publish_retained">Retained Messages: </label>
+			<input id="publish_retained" type="checkbox">
+			| 
+			<label for="qos_publish">Quality of Service: </label>
+			<select id="qos_publish">
+				<option value="0" selected>QOS_0</option>
+				<option value="1">QOS_1</option>
+				<option value="2">QOS_2</option>
+			</select>
+		</p>
+
+		<hr>
+
+		<p>
+			<label for="publish_topic">Message</label><br>
+			<input id="publish_message" class="textbox" type="text">
+		</p>
+
+
+		<button type="button" id="publish" class="btn" onclick="doPublishMessage()">publish</button>
+	</div>
+
+	<div class="subscribe_box">
+		<div class="bold">Subscribe</div>
+
+		<p>
+			<label for="suscribe_topic">Topic</label><br>
+			<input id="suscribe_topic" class="textbox fadein" type="text" size="50">
+
+			<p>
+				<label for="qos_subscribe">Quality of Service: </label>
+				<select id="qos_subscribe">
+					<option value="0" selected>QOS_0</option>
+					<option value="1">QOS_1</option>
+					<option value="2">QOS_2</option>
+				</select>
+			</p>
+		</p>
+
+		<button type="button" id="subscribe" class="btn" onclick="subscribeNewTopic()">subscribe</button>
+
+		<div class="logbox">
+			<ul id='mqtt_log'></ul>
+		</div>
+	</div>
+
+
+
+</body>
+</html>

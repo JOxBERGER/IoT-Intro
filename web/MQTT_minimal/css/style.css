@@ -1,0 +1,122 @@
+body{
+	font-family: Helvetica, Arial, sans-serif;	
+	margin:3%;
+	background-color:#eee;
+	font-size: 1em;
+	color: rgba(255, 255, 255, .9);
+	
+	-o-transition:all 500ms ease;
+	-moz-transition:all 500ms ease;
+	-webkit-transition:all 500ms ease;
+	transition:all 500ms ease;
+	
+}
+
+.textbox{
+	color: rgba(255, 255, 255, .9);
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	height:1.5em; 
+	width: 80%;
+	font-size: 1em;
+	background-color: rgba(1, 1, 1, .2);
+}
+
+.btn {
+	color: rgba(255, 255, 255, .9);
+	position: relative;
+	font-size: 1em;
+	background-color: rgba(1, 1, 1, .2);
+	padding: 1em 1em 1em 1em;
+	left: 0em;
+	text-decoration: none;
+	opacity: 1;
+	
+	-o-transition:all 300ms ease;
+	-moz-transition:all 300ms ease;
+	-webkit-transition:all 300ms ease;
+	transition:all 300ms ease;
+}
+
+.bold{
+	font-size: 2em;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding-bottom: .5em;
+}
+
+.brocker_box{
+	background-color: rgba(1, 1, 1, 0.6);
+	padding:.5em;
+	width: 95%;	
+}
+
+.publish_box{
+	background-color: rgba(1, 1, 1, 0.4);
+	padding:.5em;
+	width: 95%;	
+	height: 20em;
+}
+
+.subscribe_box{
+	background-color: rgba(1, 1, 1, 0.2);
+	background-opacity: .5;
+	padding:.5em;
+	width: 95%;
+}
+
+
+
+#publish_message{
+	width: 80%;
+	left: 0em;
+}
+
+#publish_message_info{
+	padding: 5px;
+	height: 2em;
+	width: 80%;
+}
+
+
+.logbox{
+	font-size: 1em;
+	font-family: monospace;
+}	
+
+button {
+	border: none;
+	padding: 0;
+	background: none;
+}
+
+.btn:hover {
+	text-decoration: none;
+}
+
+.fadein{
+	animation: fadein 40ms;
+	-moz-animation: fadein 40ms;
+	-webkit-animation: fadein 40ms;
+	-o-animation: fadein 40ms;
+}
+
+@keyframes fadein {
+	from { opacity:0;}
+	to { opacity:1;}
+}
+
+@-moz-keyframes fadein {
+	from { opacity:0;}
+	to { opacity:1;}
+}
+
+@-webkit-keyframes fadein {
+	from { opacity:0;}
+	to { opacity:1;}
+}
+
+@-o-keyframes fadein {
+	from { opacity:0;}
+	to { opacity:1;}
+}

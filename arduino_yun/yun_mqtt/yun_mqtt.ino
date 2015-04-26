@@ -67,7 +67,7 @@ void loop() {
     int difference = sensorOld - sensorNew;
     difference = abs(difference);
 
-    if (difference > 3) {
+    if (difference > 6) {
       char sensorChar[10];
       sprintf(sensorChar, "%d", sensorNew);
       client.publish("/node/jochen/sensor", sensorChar);

@@ -16,7 +16,8 @@ MQTT client(server, 1883, callback);
 
 // recieve message
 void callback(char* topic, byte* payload, unsigned int length) {
-    char p[length + 1];
+    // handle message arrived
+	char p[length + 1];
     memcpy(p, payload, length);
     p[length] = NULL;
     //String message(p);
@@ -43,9 +44,8 @@ void setup() {
 
     // publish/subscribe
     if (client.isConnected()) {
-        client.publish(baseAddress,"hello");
+        client.publish(baseAddress,"I am there.");
         client.subscribe("/node2015/color");
-        //client.subscribe("/color@node2014");
     }
     delay(1000);
 }
@@ -66,3 +66,4 @@ void loop() {
             sensorOld = sensorNew;
         }
     }
+}

@@ -69,6 +69,16 @@
 		<p><label for="suscribe_topic">Topic</label><br>
 			<input id="suscribe_topic" class="textbox fadein" type="text" size="50">
 		</p>
+		
+		<p>
+			<label for="qos_subscribe">Quality of Service: </label>
+			<select id="qos_subscribe">
+				<option value="0" selected>QOS_0</option>
+				<option value="1">QOS_1</option>
+				<option value="2">QOS_2</option>
+			</select>
+		</p>
+		
 		<button type="button" id="subscribe" class="btn" onclick="subscribeNewTopic()">subscribe</button>
 
 		<div class="logbox">

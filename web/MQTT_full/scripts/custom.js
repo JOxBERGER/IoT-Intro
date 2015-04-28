@@ -94,8 +94,9 @@ function MQTTconnect() {
 		//// subscribe to new topic
 		//read new topic
 		mqtt_subscribe_topic = $("#suscribe_topic").val();
+		mqtt_subscribe_qos = parseInt( $("#qos_subscribe").val());
 		//subscribe
-		mqtt_subscribe_topic = doSubscribe(mqtt_client, mqtt_subscribe_topic, 0);
+		mqtt_subscribe_topic = doSubscribe(mqtt_client, mqtt_subscribe_topic, mqtt_subscribe_qos);
 	};
 
 
@@ -142,6 +143,7 @@ function MQTTconnect() {
 		$('#publish_retained').prop("checked", mqtt_publish_retained);
 		var newcolor = colorFromDeg(mqtt_publish_message);
 		$('#publish_message_info').css('background-color', newcolor);
+		$('#qos_publish').val(mqtt_publish_qos);
 
 
 		//Subscribe
@@ -150,8 +152,10 @@ function MQTTconnect() {
 			$('#suscribe_topic').prop("disabled", true);
 			$('#suscribe_topic').css( "background", "none");
 			$('#subscribe').remove();
+			$('#qos_subscribe').remove();
 		};
 		$('#suscribe_topic').val(mqtt_subscribe_topic);
+		$('#qos_subscribe').val(mqtt_subscribe_qos);
 
 	};
 

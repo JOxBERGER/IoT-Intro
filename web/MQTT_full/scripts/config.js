@@ -1,7 +1,7 @@
 // Config for Website
 var autoconnect = true; // Connect to Brocker on load.
 var publishOnChange = false; // Publish values when sliding the slider. 
-var locked = true; // Disable User interaction.
+var locked = false; // Disable User interaction.
 var lockedTopic = "node/2015/mainstage/color";
 
 var messageQueueLenght = 30;
@@ -14,11 +14,12 @@ mqtt_port = 8080;
 
 mqtt_client_id = "CLIENT_" + parseInt(Math.random() * 100000);
 
-mqtt_subscribe_topic = '/color/' + mqtt_client_id;		// topic to subscribe to
+mqtt_subscribe_topic = 'node/2015/' + mqtt_client_id + '/color'; // topic to subscribe to
+mqtt_subscribe_qos = 2;
 
-mqtt_publish_topic = '/color/' + mqtt_client_id;		// topic to subscribe to
+mqtt_publish_topic = 'node/2015/' + mqtt_client_id + '/color'; // topic to subscribe to
 mqtt_publish_message = '222';
-mqtt_publish_retained = true;
+mqtt_publish_retained = false;
 mqtt_publish_qos = 0;
 useTLS = false;
 username = null;

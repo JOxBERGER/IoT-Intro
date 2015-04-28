@@ -106,16 +106,15 @@ function MQTTconnect() {
 		mqtt_client.subscribe(mqtt_subscribe_topic, {qos: mqtt_subscribe_qos});
 		printMessageArray(messageQueue, messageQueueLenght, "New Topic " + mqtt_subscribe_topic);
 	};
-
-
+	
 	//// Subscribe client to topic
 	function doSubscribe(_client, _topic, _qos){
 		console.log("doSubscribe " + _topic)
-		_client.subscribe(_topic, {qos: mqtt_subscribe_qos});
+		_client.subscribe(_topic, {qos: _qos});
 		printMessageArray(messageQueue, messageQueueLenght, "New Topic " + _topic);
 		return _topic
 	};
-
+	
 
 	function doPublishMessage(){			
 		//// Get the values from the input:

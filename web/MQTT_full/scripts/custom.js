@@ -211,7 +211,7 @@ function MQTTconnect() {
 		_inputArray.push(_newContent)
 		for(var i=0; i<_maxLength; i++){
 			var id = '#arrayID' + i;
-			$(id).text(_inputArray[i]);
+			$(id).html(_inputArray[i]);
 		}
 	};
 

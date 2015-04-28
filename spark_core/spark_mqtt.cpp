@@ -14,6 +14,10 @@ byte server[] = {192,10,10,10};
 MQTT client(server, 1883, callback);
 //MQTT client("server_name", 1883, callback);
 
+125
+123
+lenght = 3
+125_
 // recieve message
 void callback(char* topic, byte* payload, unsigned int length) {
     // handle message arrived
@@ -40,12 +44,12 @@ void setup() {
     RGB.color(rgbLed[0], rgbLed[1], rgbLed[2]);
     
     // connect to the server
-    client.connect("sparkclient_JL_001");
+    client.connect("jochen_spark_001");
 
     // publish/subscribe
     if (client.isConnected()) {
         client.publish(baseAddress,"I am there.");
-        client.subscribe("/node2015/color");
+        client.subscribe("node2015/jochen/color");
     }
     delay(1000);
 }

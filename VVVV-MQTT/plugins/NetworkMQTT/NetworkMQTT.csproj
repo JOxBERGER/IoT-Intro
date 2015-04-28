@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{66409B58-B4D6-46CD-90DF-1CBFC8D5CAC2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>VVVV.Nodes</RootNamespace>
+    <AssemblyName>NetworkMQTT</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <ReferencePath>..\..\..\..\..\..\..\Program Files\vvvv\vvvv45beta33.7\vvvv_45beta33.7_x86\lib\core\;..\..\..\..\..\..\..\Program Files\vvvv\vvvv45beta33.7\vvvv_45beta33.7_x86\lib\nodes\plugins\;..\..\..\..\..\..\..\Program Files\vvvv\vvvv_45beta31.2_x86\lib\core\;..\..\..\..\..\..\..\Program Files\vvvv\vvvv_45beta31.2_x86\lib\nodes\plugins\</ReferencePath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DebugType>Full</DebugType>
+    <DebugSymbols>True</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DebugType>None</DebugType>
+    <DebugSymbols>False</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x64' ">
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="M2Mqtt">
+      <HintPath>packages\M2Mqtt.3.6\lib\net40\M2Mqtt.dll</HintPath>
+    </Reference>
+    <Reference Include="SlimDX" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition.Codeplex" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="VVVV.Core" />
+    <Reference Include="VVVV.PluginInterfaces" />
+    <Reference Include="VVVV.Utils" />
+    <Reference Include="VVVV.Utils3rdParty" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NetworkMQTTReceiverNode.cs" />
+    <Compile Include="NetworkMQTTSenderNode.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NetworkMQTT.csproj" />
+    <None Include="NetworkMQTT.sln" />
+    <None Include="packages.config" />
+    <None Include="packages\M2Mqtt.3.6\lib\net40\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\lib\net45\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\lib\netcore451\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf42\be\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf42\be\M2Mqtt.pdbx" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf42\be\M2Mqtt.pe" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf42\le\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf42\le\M2Mqtt.pdbx" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf42\le\M2Mqtt.pe" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf42\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf43\be\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf43\be\M2Mqtt.pdbx" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf43\be\M2Mqtt.pe" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf43\le\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf43\le\M2Mqtt.pdbx" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf43\le\M2Mqtt.pe" />
+    <None Include="packages\M2Mqtt.3.6\lib\netmf43\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\lib\wpa81\M2Mqtt.dll" />
+    <None Include="packages\M2Mqtt.3.6\M2Mqtt.3.6.nupkg" />
+    <None Include="packages\repositories.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>

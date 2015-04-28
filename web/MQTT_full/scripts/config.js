@@ -2,15 +2,15 @@
 var autoconnect = true; // Connect to Brocker on load.
 var publishOnChange = false; // Publish values when sliding the slider. 
 var locked = true; // Disable User interaction.
-var lockedTopic = "/color@node2015";
+var lockedTopic = "node/2015/mainstage/color";
 
 var messageQueueLenght = 30;
 var messageQueue = [];
 
 // host = '172.16.153.122';	// hostname or IP address
-mqtt_host = '192.10.10.10';
+mqtt_host = 'test.mosquitto.org';
 // port
-mqtt_port = 9011;
+mqtt_port = 8080;
 
 mqtt_client_id = "CLIENT_" + parseInt(Math.random() * 100000);
 

@@ -162,21 +162,35 @@ function MQTTconnect() {
 	$(document).ready(function() {
 		setupMessageArray(messageQueueLenght, messageQueue);
 		printMessageArray(messageQueue, messageQueueLenght, "start");
-
-		if(autoconnect == true)
-		{
-			$('body').css("opacity", "0");
-			writeConfigToGUI();
-			MQTTconnect();
-		}
-		else
-		{
-			writeConfigToGUI();	
-		}
-
-
+		
+		$('#MQTT').css("opacity", "0");
+		
+		$("#front").click(function() {
+		//alert( "Handler for front called." );
+		doConnect("node/2015/patcherkutscher/front");
+		});
+		
+		$("#middle").click(function() {
+		doConnect("node/2015/patcherkutscher/middle");
+		});
+		
+		$("#rear").click(function() {
+		doConnect("node/2015/patcherkutscher/rear");
+		});
+		
 	});
-
+	
+	function doConnect(_address){
+	console.log(_address);
+	lockedTopic = _address;
+	$('#slection').remove();
+	$('#MQTT').css("visibility", "visible");
+	$('#MQTT').css("opacity", "1");
+	//$('body').css("opacity", "1");
+	writeConfigToGUI();
+	MQTTconnect();
+	}
+	
 
 	//////
 

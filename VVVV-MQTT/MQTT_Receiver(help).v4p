@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\VVVV-MQTT\MQTT_Receiver(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\VVVV-MQTT\MQTT_Receiver(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="0" bgcolor="6447714">
    <BOUNDS type="Window" left="9600" top="0" width="9600" height="11400">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="178" systemname="IOBox (Value Advanced)">
@@ -518,6 +518,12 @@
    <PIN pinname="Show Grid" slicecount="1" values="0">
    </PIN>
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="Kalle (VVVV)" nodename="Kalle (VVVV)" componentmode="Hidden" id="284">
+   <BOUNDS type="Node" left="435" top="240" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Background Kalle" slicecount="1" values="|0.38298,0.38298,0.38298,0.00000|">
    </PIN>
    </NODE>
    </PATCH>

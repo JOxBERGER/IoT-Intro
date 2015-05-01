@@ -65,6 +65,17 @@ body{
 	width: 95%;
 }
 
+.selction_field{
+	background-color: rgba(80, 122, 204, 1);
+	font-size: 3em;
+	height: 2em;
+	padding: .2em;
+	margin: .2em;
+}
+
+.dark{
+	color: rgba(120, 120, 120, 1);
+}
 
 
 #publish_message{

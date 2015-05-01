@@ -1,8 +1,8 @@
 // Config for Website
 var autoconnect = true; // Connect to Brocker on load.
 var publishOnChange = false; // Publish values when sliding the slider. 
-var locked = false; // Disable User interaction.
-var lockedTopic = "node/2015/mainstage/color";
+var locked = true; // Disable User interaction.
+var lockedTopic; // = "node/2015/patcherkutscher/color";
 
 var messageQueueLenght = 30;
 var messageQueue = [];

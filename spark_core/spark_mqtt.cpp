@@ -1,7 +1,7 @@
-#include "MQTT/MQTT.h"
+//#include "MQTT/MQTT.h" you need to include the MQTT library into via spark IDE at https://build.spark.io after creating a new app. just search for MQTT at the Library functions inside build.spark.io
 
-byte rgbLed[3] = {0, 255, 0}; 
-char baseAddress[50] = "/node/jochen";
+char baseAddress[50] = "node/2015/core"; 
+char ID[50];// We define a char array to contain the ID.
 
 /**
  * if want to use IP address,
@@ -11,13 +11,11 @@ char baseAddress[50] = "/node/jochen";
  * MQTT client("www.sample.com", 1883, callback);
  **/
 byte server[] = {192,10,10,10};
-MQTT client(server, 1883, callback);
+//MQTT client(server, 1883, callback);
 //MQTT client("server_name", 1883, callback);
+//MQTT client(server, 1883, callback);
+MQTT client("test.mosquitto.org", 1883, callback);
 
-125
-123
-lenght = 3
-125_
 // recieve message
 void callback(char* topic, byte* payload, unsigned int length) {
     // handle message arrived
@@ -40,16 +38,31 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 void setup() {
     RGB.control(true);
-    // Show colors on the LED
-    RGB.color(rgbLed[0], rgbLed[1], rgbLed[2]);
+    // blink red green blue
+    RGB.color(255, 0, 0);
+    delay(1000);
+    RGB.color(0, 255, 0);
+    delay(1000);
+    RGB.color(0, 0, 255);
+    delay(1000);
+
+    
+    //generate a random ID (hopefully unique)
+    char IDstart[4] = "ID_";
+    char IDrandom[5];
+    sprintf(IDrandom, "%d", random(9999));
+    
+    
+    strcpy(ID,IDstart); // copy string one into the result.
+    strcat(ID,IDrandom); // append string two to the result.
     
     // connect to the server
-    client.connect("jochen_spark_001");
+    client.connect(ID);
 
     // publish/subscribe
     if (client.isConnected()) {
-        client.publish(baseAddress,"I am there.");
-        client.subscribe("node2015/jochen/color");
+        client.publish(baseAddress, ID);
+        client.subscribe("node/2015/core001/color"); // better change that topic to be unique
     }
     delay(1000);
 }
@@ -66,8 +79,14 @@ void loop() {
         if(difference > 3){
             char sensorChar[10];
             sprintf(sensorChar, "%d", sensorNew);
-            client.publish("/node/jochen/sensor", sensorChar);
+            client.publish("node/2015/mainstage001/color", sensorChar); // better change that topic to be unique
             sensorOld = sensorNew;
         }
     }
+    else{
+        // try to reconnect
+        client.connect(ID);
+        client.publish(baseAddress, "reconnected!");
+    }
+    
 }

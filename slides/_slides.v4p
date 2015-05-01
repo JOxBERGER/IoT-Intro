@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\Users\JL\Documents\IoT_intro\slides\_slides.v4p" systemname="_slides" filename="C:\Users\JL\Documents\IoT_intro\slides\_slides.v4p" scrollx="0" scrolly="-360">
+   <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\slides\_slides.v4p" systemname="_slides" filename="C:\Users\JL\Documents\IoT_intro\slides\_slides.v4p" scrollx="0" scrolly="2520">
    <BOUNDS type="Window" left="2820" top="2205" width="9000" height="7185">
    </BOUNDS>
    <PACK Name="addonpack" Version="33.7.0">
@@ -42,24 +42,6 @@
    <LINKPOINT x="915" y="3690">
    </LINKPOINT>
    </LINK>
-   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="4">
-   <BOUNDS type="Node" left="480" top="6525" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="480" top="6525" width="2400" height="1800">
-   </BOUNDS>
-   <BOUNDS type="Window" left="10980" top="2115" width="7785" height="5310">
-   </BOUNDS>
-   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Background Color" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
-   </PIN>
-   <PIN pinname="Actual Backbuffer Width" visible="1">
-   </PIN>
-   <PIN pinname="Actual Backbuffer Height" visible="1">
-   </PIN>
-   <PIN pinname="Aspect Ratio" visible="1">
-   </PIN>
-   </NODE>
    <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="6">
    <BOUNDS type="Node" left="480" top="5955" width="100" height="100">
    </BOUNDS>
@@ -69,8 +51,6 @@
    </PIN>
    </NODE>
    <LINK srcnodeid="3" srcpinname="Layer" dstnodeid="6" dstpinname="Layer 1">
-   </LINK>
-   <LINK srcnodeid="6" srcpinname="Layer" dstnodeid="4" dstpinname="Layers">
    </LINK>
    <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="7">
    <BOUNDS type="Node" left="3660" top="2940" width="100" height="100">
@@ -273,27 +253,13 @@
    <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="22">
    <BOUNDS type="Node" left="1320" top="7095" width="100" height="100">
    </BOUNDS>
-   <PIN pinname="Aspect Width" visible="1">
+   <PIN pinname="Aspect Width" visible="1" slicecount="1" values="503">
    </PIN>
-   <PIN pinname="Aspect Height" visible="1">
+   <PIN pinname="Aspect Height" visible="1" slicecount="1" values="320">
    </PIN>
    <PIN pinname="Transform Out" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="4" srcpinname="Actual Backbuffer Width" dstnodeid="22" dstpinname="Aspect Width">
-   </LINK>
-   <LINK srcnodeid="4" srcpinname="Actual Backbuffer Height" dstnodeid="22" dstpinname="Aspect Height">
-   </LINK>
-   <LINK srcnodeid="22" srcpinname="Transform Out" dstnodeid="4" dstpinname="Aspect Ratio">
-   <LINKPOINT x="1335" y="7875">
-   </LINKPOINT>
-   <LINKPOINT x="2715" y="7875">
-   </LINKPOINT>
-   <LINKPOINT x="2715" y="6405">
-   </LINKPOINT>
-   <LINKPOINT x="2190" y="6405">
-   </LINKPOINT>
-   </LINK>
    <NODE systemname="AspectRatio (Transform)" nodename="AspectRatio (Transform)" componentmode="Hidden" id="23">
    <BOUNDS type="Node" left="750" top="4650" width="100" height="100">
    </BOUNDS>
@@ -342,8 +308,6 @@
    <LINKPOINT x="1785" y="3540">
    </LINKPOINT>
    </LINK>
-   <LINK srcnodeid="18" srcpinname="Output" dstnodeid="4" dstpinname="Background Color">
-   </LINK>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="27" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="1530" top="3720" width="795" height="240">
    </BOUNDS>
@@ -376,4 +340,40 @@
    <PIN pinname="Size" slicecount="1" values="16">
    </PIN>
    </NODE>
+   <NODE id="4" systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="Hidden">
+   <BOUNDS type="Node" left="480" top="6525" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="480" top="6525" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="10980" top="2115" width="7785" height="5310">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Background Color" visible="1" slicecount="1" values="|1.00000,1.00000,1.00000,1.00000|">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Width" visible="1">
+   </PIN>
+   <PIN pinname="Actual Backbuffer Height" visible="1">
+   </PIN>
+   <PIN pinname="Aspect Ratio" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Output" dstnodeid="4" dstpinname="Background Color">
+   </LINK>
+   <LINK srcnodeid="22" srcpinname="Transform Out" dstnodeid="4" dstpinname="Aspect Ratio">
+   <LINKPOINT x="1335" y="7875">
+   </LINKPOINT>
+   <LINKPOINT x="2715" y="7875">
+   </LINKPOINT>
+   <LINKPOINT x="2715" y="6405">
+   </LINKPOINT>
+   <LINKPOINT x="2190" y="6405">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Actual Backbuffer Height" dstnodeid="22" dstpinname="Aspect Height">
+   </LINK>
+   <LINK srcnodeid="4" srcpinname="Actual Backbuffer Width" dstnodeid="22" dstpinname="Aspect Width">
+   </LINK>
+   <LINK srcnodeid="6" srcpinname="Layer" dstnodeid="4" dstpinname="Layers">
+   </LINK>
    </PATCH>

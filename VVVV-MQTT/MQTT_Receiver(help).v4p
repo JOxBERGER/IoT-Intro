@@ -1,5 +1,5 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\Users\JL\Documents\IoT_intro\VVVV-MQTT\MQTT_Receiver(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="0">
+   <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\VVVV-MQTT\MQTT_Receiver(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="0">
    <BOUNDS type="Window" left="9600" top="0" width="9600" height="11400">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="178" systemname="IOBox (Value Advanced)">
@@ -493,7 +493,7 @@
    </BOUNDS>
    <BOUNDS type="Node" left="1830" top="4635" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="node/2015/mainstage/color">
+   <PIN pinname="Input String" slicecount="1" visible="1" values="node/2015/#">
    </PIN>
    <PIN pinname="Default" slicecount="1" values="#">
    </PIN>
@@ -506,4 +506,18 @@
    </LINK>
    <LINK srcnodeid="279" srcpinname="Output" dstnodeid="282" dstpinname="Input String">
    </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="283" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="2805" top="525" width="4290" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2805" top="525" width="4380" height="1650">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Patches prepared for NODE15 IoT Workshop&cr;&lf;&cr;&lf;Both MQTT receiver and MQTT sender use the public&cr;&lf;MQTT server test.mosquitto.org.&cr;&lf;Please don&apos;t Mess to  much with that server as it is just a demo machine operated by the devs of mosquitto for free and test purposes.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

@@ -1,7 +1,7 @@
 char* baseAddress = "/node/jochen";
 
 // MQTT Brocker adress
-byte _server[] = {192, 10, 10, 10};
+//byte _server[] = {192, 10, 10, 10}; // use this to declare the broker address based on ist IP address. declaration via hostname is done in the client definition directly.
 int _port = 1883;
 
 // Led Pin
@@ -38,7 +38,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 }
 
 YunClient yun;
-PubSubClient client(_server, _port, callback, yun);
+PubSubClient client("test.mosquitto.org", _port, callback, yun);
 
 void setup() {
 

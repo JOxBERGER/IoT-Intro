@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\Users\JL\Documents\IoT_intro\VVVV-MQTT\MQTT_Sender(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="0" locked="0">
-   <BOUNDS type="Window" left="0" top="0" width="9600" height="11400">
+   <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\VVVV-MQTT\MQTT_Sender(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="0" locked="0">
+   <BOUNDS type="Window" left="0" top="0" width="12300" height="11400">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="9630" top="3075" width="540" height="510">
@@ -261,7 +261,7 @@
    <NODE systemname="MQTT Sender (Network beta 0.1)" filename="plugins\NetworkMQTT\NetworkMQTT.csproj" nodename="MQTT Sender (Network beta 0.1)" componentmode="Hidden" id="257">
    <BOUNDS type="Node" left="735" top="6540" width="10245" height="270">
    </BOUNDS>
-   <PIN pinname="Topic" visible="1" slicecount="1" values="node/2015/mainstage/color">
+   <PIN pinname="Topic" visible="1" slicecount="1" values="node/2015/E0F847064FD6/color">
    </PIN>
    <PIN pinname="Message" visible="1">
    </PIN>
@@ -337,15 +337,13 @@
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
-   <PIN pinname="Input 1" visible="1">
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="0.657534246575343">
    </PIN>
-   <PIN pinname="Input 2" slicecount="1" values="360">
+   <PIN pinname="Input 2" slicecount="1" values="360" visible="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="262" srcpinname="Hue" dstnodeid="263" dstpinname="Input 1">
-   </LINK>
    <NODE systemname="FormatValue (String)" nodename="FormatValue (String)" componentmode="Hidden" id="264">
    <BOUNDS type="Node" left="3915" top="2550" width="100" height="100">
    </BOUNDS>
@@ -389,9 +387,9 @@
    </PIN>
    <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="0.945945945945946">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" values="0.438356164383562">
+   <PIN pinname="Y Input Value" slicecount="1" values="0.287671232876713">
    </PIN>
    <PIN pinname="Slider Alignment" slicecount="1" values="Grid">
    </PIN>
@@ -464,8 +462,62 @@
    </NODE>
    <LINK srcnodeid="272" srcpinname="Output" dstnodeid="269" dstpinname="Input String">
    </LINK>
-   <LINK srcnodeid="269" srcpinname="Output String" dstnodeid="257" dstpinname="Topic">
-   </LINK>
    <LINK srcnodeid="148" srcpinname="Output String" dstnodeid="272" dstpinname="Input 2">
    </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="273" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="6795" top="735" width="4290" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6795" top="735" width="4380" height="1650">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|Patches prepared for NODE15 IoT Workshop&cr;&lf;&cr;&lf;Both MQTT receiver and MQTT sender use the public&cr;&lf;MQTT server test.mosquitto.org.&cr;&lf;Please don&apos;t Mess to  much with that server as it is just a demo machine operated by the devs of mosquitto for free and test purposes.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="274">
+   <BOUNDS type="Node" left="2550" top="9690" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2550" top="9690" width="2955" height="495">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="node/2015/core001/color">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="274" srcpinname="Output String" dstnodeid="257" dstpinname="Topic">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="275" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5175" top="2040" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5175" top="2040" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="255">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="275" srcpinname="Y Output Value" dstnodeid="263" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="268" srcpinname="Y Output Value" dstnodeid="263" dstpinname="Input 1">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="276" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="5160" top="2370" width="4290" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5160" top="2370" width="2640" height="900">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="|you can only send a value between 0 -255 to the arduio / core as value for brightness.|">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
    </PATCH>

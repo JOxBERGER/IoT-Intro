@@ -1,7 +1,29 @@
-//#include "MQTT/MQTT.h" you need to include the MQTT library into via spark IDE at https://build.spark.io after creating a new app. just search for MQTT at the Library functions inside build.spark.io
+// This Code is developed and tested for a Spark Core. Copy the code into your Spark IDE found at: build.spark.io 
+// You need to include the following Librarys:
+// - SparkJson
+// - MQTT 
+// Details on installing Librarys: http://docs.spark.io/build/#flash-apps-with-spark-build-using-libraries
 
-char baseAddress[50] = "node/2015/core"; 
+// This Code is developed and tested for a Spark Core. Copy the code into your Spark IDE found at: build.spark.io 
+// You need to include the following Librarys:
+// - SparkJson
+// - MQTT 
+// Details on installing Librarys: http://docs.spark.io/build/#flash-apps-with-spark-build-using-libraries
+
+
+// Use a unique space here e.g. node/2015/iot/core-yourname/sub etc.
+// otherwise some one else might overwrite your topics, as long as 
+// you are running on a public Server.
+char AddressColor[50] = "node/2015/iot/core-yourname/color"; 
+char AddressAnalog01[50] = "node/2015/iot/core-yourname/analog01"; 
+char AddressDebug[50] = "node/2015/iot/core-yourname/debug"; 
+
+
+
 char ID[50];// We define a char array to contain the ID.
+
+int LEDcolor []= {0, 0, 0}; //Array to store values for colors
+    
 
 /**
  * if want to use IP address,
@@ -18,16 +40,35 @@ MQTT client("test.mosquitto.org", 1883, callback);
 
 // recieve message
 void callback(char* topic, byte* payload, unsigned int length) {
-    // handle message arrived
-	char p[length + 1];
-    memcpy(p, payload, length);
-    p[length] = NULL;
-    //String message(p);
+    // store payload of arrived message.
+	char payloadIn[length + 1];
+    memcpy(payloadIn, payload, length);
+    payloadIn[length] = NULL;
+    //String message(inout);
     
-    int receiveValue;
-    receiveValue = atoi(p);
+    StaticJsonBuffer<200> jsonBuffer;
+    JsonObject& arrayInput = jsonBuffer.parseObject(payloadIn);
     
-    RGB.color(receiveValue, receiveValue, receiveValue);
+
+    if (!arrayInput.success()) {
+    //client.publish(baseAddressDebug, "Json Parsing failed.");
+    return;
+    }
+    else if (arrayInput.success()){
+        LEDcolor[0] = arrayInput["red"];
+        LEDcolor[1] = arrayInput["green"];
+        LEDcolor[2] = arrayInput["blue"];
+    }
+    
+    
+    
+    //int receiveValue;
+    //receiveValue = atoi(p);
+    //receiveValue = 125;
+    
+    //RGB.color(_val, _val, _val);
+    RGB.color(LEDcolor[0], LEDcolor[1], LEDcolor[2]);
+    
     /*
     char brightnessChar[10];
     sprintf(brightnessChar, "%d", receiveValue);
@@ -38,7 +79,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
 void setup() {
     RGB.control(true);
-    // blink red green blue
+    // blink red green blue after startup
     RGB.color(255, 0, 0);
     delay(1000);
     RGB.color(0, 255, 0);
@@ -47,25 +88,35 @@ void setup() {
     delay(1000);
 
     
-    //generate a random ID (hopefully unique)
-    char IDstart[4] = "ID_";
+    //generate a random ID
     char IDrandom[5];
     sprintf(IDrandom, "%d", random(9999));
-    
-    
-    strcpy(ID,IDstart); // copy string one into the result.
+    strcpy(ID, "ID_"); //IDstart); // copy string one into the result.
     strcat(ID,IDrandom); // append string two to the result.
     
     // connect to the server
     client.connect(ID);
+    delay(1000);
 
     // publish/subscribe
+    int connectattemps = 0;
+    while (!client.isConnected()){
+       connectattemps++;
+       client.connect(ID);
+       delay(1000);
+    }
     if (client.isConnected()) {
-        client.publish(baseAddress, ID);
-        client.subscribe("node/2015/core001/color"); // better change that topic to be unique
+        char attemps[30];
+        sprintf(attemps, "%d", connectattemps);
+        strcat(attemps, " attemps"); // append string two to the result.
+        client.publish(AddressDebug, attemps);
+        client.publish(AddressDebug, ID);
+        
+        client.subscribe(AddressColor);
     }
     delay(1000);
 }
+
 
 int sensorOld = 0;
 void loop() {
@@ -79,14 +130,17 @@ void loop() {
         if(difference > 3){
             char sensorChar[10];
             sprintf(sensorChar, "%d", sensorNew);
-            client.publish("node/2015/mainstage001/color", sensorChar); // better change that topic to be unique
+            client.publish(AddressAnalog01, sensorChar); // better change that topic to be unique
             sensorOld = sensorNew;
         }
     }
     else{
         // try to reconnect
         client.connect(ID);
-        client.publish(baseAddress, "reconnected!");
+        delay(1000);
+        if (client.isConnected()) {
+            client.publish(AddressDebug, "reconnected!");
+        }
     }
     
 }

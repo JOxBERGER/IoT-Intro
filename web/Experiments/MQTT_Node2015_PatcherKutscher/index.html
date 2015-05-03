@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Mosquitto Websockets</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css" media="all">
+	<link rel="stylesheet" href="scripts/libs/jquery-ui/jquery-ui.css">
+
+	<script src="scripts/libs/mqttws31.js" type="text/javascript"></script>
+	<script src="scripts/libs/jquery.min.js" type="text/javascript"></script>
+	<script src="scripts/libs/jquery-ui/jquery-ui.js"></script>
+	<script src="scripts/libs/jquery-ui/jquery.ui.touch-punch.js" type="text/javascript"></script>
+	<script src="scripts/config.js" type="text/javascript"></script>
+	<script src="scripts/custom.js" type="text/javascript"></script>
+
+	
+
+	<script>
+	
+	</script>
+
+
+</head>
+<body>
+
+<div id="slection">
+
+<h1 class="dark">Select your position:</h1>
+
+<div id="front" class="selction_field" >
+<p>Front third</p>
+</div>
+
+<div id="middle" class="selction_field">
+<p>Middle third</p>
+</div>
+
+<div id="rear" class="selction_field">
+<p>Rear third</p>
+</div>
+
+</div>
+
+<div id="MQTT">
+	<div class="brocker_box">
+		<div class="bold">MQTT Brocker</div>
+		<p>
+			<label for="client_id">Client ID: </label>
+			<input id="client_id" class="textbox fadein" type="text">
+			<button type="button" id="status" class="btn" onclick="MQTTconnect()">connect</button>
+		</p>
+	</div>
+
+
+	<div id="publish_box">
+		<div class="bold">Publish</div>
+		<p>
+			<label for="publish_topic">Topic</label><br>
+			<input id="publish_topic" class="textbox fadein" type="text" size="50">
+		</p>
+		
+		<p>
+			<label for="publish_retained">Retained Messages: </label>
+			<input id="publish_retained" type="checkbox">
+			| 
+			<label for="qos_publish">Quality of Service: </label>
+			<select id="qos_publish">
+				<option value="0" selected>QOS_0</option>
+				<option value="1">QOS_1</option>
+				<option value="2">QOS_2</option>
+			</select>
+		</p>
+		
+		<hr>
+
+		<p>
+			<div id="publish_message"></div>
+		</p>
+
+		
+		<button type="button" id="publish" class="btn" onclick="doPublishMessage()"></button>
+	</div>
+
+	<div class="receive_box">
+		<div class="bold">Subscribe</div>
+
+		<p><label for="suscribe_topic">Topic</label><br>
+			<input id="suscribe_topic" class="textbox fadein" type="text" size="50">
+		</p>
+		
+		<p>
+			<label for="qos_subscribe">Quality of Service: </label>
+			<select id="qos_subscribe">
+				<option value="0" selected>QOS_0</option>
+				<option value="1">QOS_1</option>
+				<option value="2">QOS_2</option>
+			</select>
+		</p>
+		
+		<button type="button" id="subscribe" class="btn" onclick="subscribeNewTopic()">subscribe</button>
+
+		<div class="logbox">
+			<ul id='mqtt_log'></ul>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>

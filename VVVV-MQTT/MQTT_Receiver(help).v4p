@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\VVVV-MQTT\MQTT_Receiver(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="0">
-   <BOUNDS type="Window" left="9600" top="0" width="9600" height="11400">
+   <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\VVVV-MQTT\MQTT_Receiver(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="1425">
+   <BOUNDS type="Window" left="1785" top="750" width="9600" height="11400">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="178" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="7980" top="4290" width="480" height="480">
@@ -95,7 +95,7 @@
    <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="194">
    <BOUNDS type="Node" left="300" top="9585" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="300" top="9585" width="1395" height="5835">
+   <BOUNDS type="Box" left="300" top="9585" width="3165" height="5805">
    </BOUNDS>
    <PIN pinname="Input String" visible="1">
    </PIN>
@@ -109,9 +109,9 @@
    </PIN>
    </NODE>
    <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="195">
-   <BOUNDS type="Node" left="2850" top="9585" width="100" height="100">
+   <BOUNDS type="Node" left="3540" top="9600" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="2850" top="9585" width="1395" height="5835">
+   <BOUNDS type="Box" left="3540" top="9600" width="2670" height="5610">
    </BOUNDS>
    <PIN pinname="Input String" visible="1" slicecount="0" values="||">
    </PIN>
@@ -216,7 +216,11 @@
    </NODE>
    <LINK srcnodeid="193" srcpinname="Output" dstnodeid="194" dstpinname="Input String">
    </LINK>
-   <LINK srcnodeid="196" srcpinname="Output" dstnodeid="195" dstpinname="Input String">
+   <LINK srcnodeid="196" srcpinname="Output" dstnodeid="195" dstpinname="Input String" linkstyle="Bezier">
+   <LINKPOINT x="2880" y="8520">
+   </LINKPOINT>
+   <LINKPOINT x="3555" y="8520">
+   </LINKPOINT>
    </LINK>
    <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="219">
    <BOUNDS type="Node" left="300" top="2520" width="100" height="100">
@@ -333,7 +337,7 @@
    </BOUNDS>
    <PIN pinname="Qualiy of Service" visible="1" slicecount="1" values="QoS_0">
    </PIN>
-   <PIN pinname="Topic" visible="1" slicecount="1" values="node/2015/mainstage/color">
+   <PIN pinname="Topic" visible="1" slicecount="1" values="node/2015/#">
    </PIN>
    <PIN pinname="Message" visible="1">
    </PIN>
@@ -355,17 +359,15 @@
    <LINK srcnodeid="264" srcpinname="Connection Status" dstnodeid="209" dstpinname="Input String">
    </LINK>
    <NODE systemname="AsValue (String)" nodename="AsValue (String)" componentmode="Hidden" id="267">
-   <BOUNDS type="Node" left="5010" top="7410" width="100" height="100">
+   <BOUNDS type="Node" left="7005" top="7620" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
    <PIN pinname="Output" visible="1">
    </PIN>
    </NODE>
-   <LINK srcnodeid="196" srcpinname="Output" dstnodeid="267" dstpinname="Input">
-   </LINK>
    <NODE systemname="Divide (Value)" nodename="Divide (Value)" componentmode="Hidden" id="268">
-   <BOUNDS type="Node" left="4995" top="8745" width="100" height="100">
+   <BOUNDS type="Node" left="6990" top="8955" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1" slicecount="1" values="0">
    </PIN>
@@ -375,11 +377,11 @@
    </PIN>
    </NODE>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="269" systemname="IOBox (Value Advanced)">
-   <BOUNDS type="Box" left="5235" top="7830" width="795" height="240">
+   <BOUNDS type="Box" left="7230" top="8040" width="795" height="240">
    </BOUNDS>
-   <BOUNDS type="Node" left="5235" top="7830" width="0" height="0">
+   <BOUNDS type="Node" left="7230" top="8040" width="0" height="0">
    </BOUNDS>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="360">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="4096">
    </PIN>
    <PIN pinname="Units" slicecount="1" values="||">
    </PIN>
@@ -389,7 +391,7 @@
    <LINK srcnodeid="269" srcpinname="Y Output Value" dstnodeid="268" dstpinname="Input 2">
    </LINK>
    <NODE systemname="HSV (Color Join)" nodename="HSV (Color Join)" componentmode="Hidden" id="270">
-   <BOUNDS type="Node" left="4995" top="9165" width="100" height="100">
+   <BOUNDS type="Node" left="6990" top="9375" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Hue" visible="1">
    </PIN>
@@ -401,9 +403,9 @@
    <LINK srcnodeid="268" srcpinname="Output" dstnodeid="270" dstpinname="Hue">
    </LINK>
    <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="271">
-   <BOUNDS type="Node" left="4995" top="9585" width="100" height="100">
+   <BOUNDS type="Node" left="6990" top="9795" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="4995" top="9585" width="1800" height="5835">
+   <BOUNDS type="Box" left="6990" top="9795" width="1800" height="5835">
    </BOUNDS>
    <PIN pinname="Rows" slicecount="1" values="30">
    </PIN>
@@ -417,7 +419,7 @@
    <LINK srcnodeid="270" srcpinname="Output" dstnodeid="271" dstpinname="Color Input">
    </LINK>
    <NODE systemname="GetSlice (Color)" nodename="GetSlice (Color)" componentmode="Hidden" id="275">
-   <BOUNDS type="Node" left="8325" top="10185" width="100" height="100">
+   <BOUNDS type="Node" left="10320" top="10395" width="100" height="100">
    </BOUNDS>
    <PIN pinname="Input" visible="1">
    </PIN>
@@ -427,9 +429,9 @@
    <LINK srcnodeid="270" srcpinname="Output" dstnodeid="275" dstpinname="Input">
    </LINK>
    <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="277">
-   <BOUNDS type="Node" left="8325" top="10770" width="100" height="100">
+   <BOUNDS type="Node" left="10320" top="10980" width="100" height="100">
    </BOUNDS>
-   <BOUNDS type="Box" left="8325" top="10770" width="2250" height="480">
+   <BOUNDS type="Box" left="10320" top="10980" width="2250" height="480">
    </BOUNDS>
    <PIN pinname="Color Input" visible="1">
    </PIN>
@@ -439,72 +441,6 @@
    <LINK srcnodeid="275" srcpinname="Output" dstnodeid="277" dstpinname="Color Input">
    </LINK>
    <LINK srcnodeid="267" srcpinname="Output" dstnodeid="268" dstpinname="Input">
-   </LINK>
-   <NODE systemname="Add (String)" nodename="Add (String)" componentmode="Hidden" id="279">
-   <BOUNDS type="Node" left="1830" top="4230" width="100" height="100">
-   </BOUNDS>
-   <PIN pinname="Input 1" visible="1">
-   </PIN>
-   <PIN pinname="Input Count" slicecount="1" values="3">
-   </PIN>
-   <PIN pinname="Input 3" visible="1">
-   </PIN>
-   <PIN pinname="Input 2" visible="1">
-   </PIN>
-   <PIN pinname="Output" visible="1">
-   </PIN>
-   </NODE>
-   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="280">
-   <BOUNDS type="Node" left="1815" top="3645" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="1815" top="3645" width="1275" height="330">
-   </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" values="node/2015/">
-   </PIN>
-   <PIN pinname="Output String" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="280" srcpinname="Output String" dstnodeid="279" dstpinname="Input 1">
-   </LINK>
-   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="281">
-   <BOUNDS type="Node" left="3150" top="3630" width="100" height="100">
-   </BOUNDS>
-   <BOUNDS type="Box" left="3150" top="3630" width="1275" height="330">
-   </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" values="/color">
-   </PIN>
-   <PIN pinname="Output String" visible="1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="281" srcpinname="Output String" dstnodeid="279" dstpinname="Input 3" linkstyle="Bezier">
-   <LINKPOINT x="3150" y="4080">
-   </LINKPOINT>
-   <LINKPOINT x="2235" y="4080">
-   </LINKPOINT>
-   </LINK>
-   <LINK srcnodeid="251" srcpinname="Output String" dstnodeid="279" dstpinname="Input 2" linkstyle="Bezier">
-   <LINKPOINT x="525" y="3218">
-   </LINKPOINT>
-   <LINKPOINT x="1995" y="3218">
-   </LINKPOINT>
-   </LINK>
-   <NODE nodename="IOBox (String)" componentmode="InABox" id="282" systemname="IOBox (String)">
-   <BOUNDS type="Box" left="1830" top="4635" width="2880" height="300">
-   </BOUNDS>
-   <BOUNDS type="Node" left="1830" top="4635" width="0" height="0">
-   </BOUNDS>
-   <PIN pinname="Input String" slicecount="1" visible="1" values="node/2015/#">
-   </PIN>
-   <PIN pinname="Default" slicecount="1" values="#">
-   </PIN>
-   <PIN pinname="File Mask" slicecount="1" values="||">
-   </PIN>
-   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
-   </PIN>
-   </NODE>
-   <LINK srcnodeid="282" srcpinname="Output String" dstnodeid="264" dstpinname="Topic">
-   </LINK>
-   <LINK srcnodeid="279" srcpinname="Output" dstnodeid="282" dstpinname="Input String">
    </LINK>
    <NODE nodename="IOBox (String)" componentmode="InABox" id="283" systemname="IOBox (String)">
    <BOUNDS type="Node" left="2805" top="525" width="4290" height="270">
@@ -520,4 +456,78 @@
    <PIN pinname="String Type" slicecount="1" values="MultiLine">
    </PIN>
    </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="284" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="1845" top="3990" width="3105" height="585">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1845" top="3990" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="2" visible="1" values="node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/debug">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="#">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   <PIN pinname="Rows" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="SliceCount Mode" slicecount="1" values="ColsRowsPages">
+   </PIN>
+   </NODE>
+   <NODE systemname="EQ (String)" nodename="EQ (String)" componentmode="Hidden" id="285">
+   <BOUNDS type="Node" left="1365" top="8010" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="193" srcpinname="Output" dstnodeid="285" dstpinname="Input 1">
+   </LINK>
+   <NODE systemname="GetSlice (String)" nodename="GetSlice (String)" componentmode="Hidden" id="286">
+   <BOUNDS type="Node" left="1575" top="7365" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="284" srcpinname="Output String" dstnodeid="286" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="1860" y="5970">
+   </LINKPOINT>
+   <LINKPOINT x="1605" y="5970">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="286" srcpinname="Output" dstnodeid="285" dstpinname="Input 2">
+   </LINK>
+   <NODE systemname="Select (String)" nodename="Select (String)" componentmode="Hidden" id="287">
+   <BOUNDS type="Node" left="870" top="8625" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Select" visible="1">
+   </PIN>
+   <PIN pinname="Input" visible="1" slicecount="144" values="node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01,node/2015/iot/core-yourname/analog01">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="285" srcpinname="Output" dstnodeid="287" dstpinname="Select">
+   </LINK>
+   <LINK srcnodeid="287" srcpinname="Output" dstnodeid="267" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="1905" y="10680">
+   </LINKPOINT>
+   <LINKPOINT x="7170" y="6570">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="196" srcpinname="Output" dstnodeid="287" dstpinname="Input" linkstyle="Bezier">
+   <LINKPOINT x="2850" y="8018">
+   </LINKPOINT>
+   <LINKPOINT x="930" y="8018">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="284" srcpinname="Output String" dstnodeid="264" dstpinname="Topic">
+   </LINK>
    </PATCH>

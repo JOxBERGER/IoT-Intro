@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
-   <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\VVVV-MQTT\MQTT_Sender(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="30" scrolly="0" locked="0">
-   <BOUNDS type="Window" left="7140" top="750" width="12300" height="11400">
+   <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\VVVV-MQTT\MQTT_Sender(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="0" locked="0">
+   <BOUNDS type="Window" left="9600" top="0" width="9600" height="11400">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="5" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="9630" top="3075" width="540" height="510">
@@ -329,9 +329,9 @@
    </PIN>
    <PIN pinname="Slider Behavior" slicecount="1" values="Slider">
    </PIN>
-   <PIN pinname="X Input Value" slicecount="1" values="7.21644966006352E-016">
+   <PIN pinname="X Input Value" slicecount="1" values="1">
    </PIN>
-   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.198630136986301">
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0.417808219178082">
    </PIN>
    <PIN pinname="Slider Alignment" slicecount="1" values="Grid">
    </PIN>

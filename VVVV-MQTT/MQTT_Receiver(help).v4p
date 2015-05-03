@@ -1,6 +1,6 @@
 <!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta33.7.dtd" >
    <PATCH nodename="C:\Users\JL\Documents\IoT-Intro\VVVV-MQTT\MQTT_Receiver(help).v4p" systemname="counter" filename="D:\VVVV-Projects\vvvv+mqtt\counter.v4p" scrollx="0" scrolly="1425">
-   <BOUNDS type="Window" left="1785" top="750" width="9600" height="11400">
+   <BOUNDS type="Window" left="0" top="0" width="9600" height="11400">
    </BOUNDS>
    <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="178" systemname="IOBox (Value Advanced)">
    <BOUNDS type="Box" left="7980" top="4290" width="480" height="480">
